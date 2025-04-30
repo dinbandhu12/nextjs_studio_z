@@ -1,42 +1,75 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi-Variable.woff2') format('woff2'),
+       url('/fonts/Satoshi-Variable.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+:root {
+  /* Light mode color */
+  --bg-light: #FDFBF5;
+  --heading-light: #191919;
+  --subheading-light: #262626;
+  --paragraph-light: #313131;
+  --button-light-bg: #191919;
+  --button-light-text: #ffffff;
+  --border-light: #191919;
+
+  /* Dark mode color */
+  --bg-dark: #191919;
+  --heading-dark: #FDFBF5;
+  --subheading-dark: #dfdede;
+  --paragraph-dark: #c1c1c1;
+  --button-dark-bg: #ffffff;
+  --button-dark-text: #191919;
+  --border-dark: #FDFBF5;
+
+  /* Default theme (light) */
+  --background: var(--bg-light);
+  --heading: var(--heading-light);
+  --subheading: var(--subheading-light);
+  --paragraph: var(--paragraph-light);
+  --button-bg: var(--button-light-bg);
+  --button-text: var(--button-light-text);
+  --border: var(--border-light);
+
+  /* Fonts */
+  --font-heading: "Syne";
+  --font-subheading: "Roboto Mono";
+  --font-paragraph: "Satoshi";
+  --font-button: "Roboto Mono";
 }
+
+/* Dark mode styles */
+:root.dark-mode {
+  --background: var(--bg-dark);
+  --heading: var(--heading-dark);
+  --subheading: var(--subheading-dark);
+  --paragraph: var(--paragraph-dark);
+  --button-bg: var(--button-dark-bg);
+  --button-text: var(--button-dark-text);
+  --border: var(--border-dark);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--heading);
+  transition: all 0.3s ease;
+}
+
+.container {
+  border: 1px solid var(--border);
+  margin: 16px;
+  min-height: 100vh;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+

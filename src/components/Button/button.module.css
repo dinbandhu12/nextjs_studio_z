@@ -1,0 +1,22 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 20px;
+  background-color: var(--button-light-bg);
+  color: var(--button-light-text);
+  border: none;
+  border-radius: 8px;
+  font-family: var(--font-button);
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: transform 0.2s ease;
+}
+
+
+:global(.dark-mode) .button {
+  background-color: var(--button-dark-bg);
+  color: var(--button-dark-text);
+}
