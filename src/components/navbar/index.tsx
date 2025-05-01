@@ -10,7 +10,6 @@ export default function Navbar() {
   const [isMoreOpen, setIsMoreOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
@@ -52,55 +51,67 @@ export default function Navbar() {
       const moreButton = document.querySelector(`.${style.more_button}`);
       const mobileMenu = document.querySelector(`.${style.mobile_menu}`);
       const hamburger = document.querySelector(`.${style.hamburger}`);
-      
-      if (toggleDiv && moreButton && 
-          !toggleDiv.contains(event.target as Node) && 
-          !moreButton.contains(event.target as Node)) {
+
+      if (
+        toggleDiv &&
+        moreButton &&
+        !toggleDiv.contains(event.target as Node) &&
+        !moreButton.contains(event.target as Node)
+      ) {
         setIsMoreOpen(false);
       }
 
-      if (mobileMenu && hamburger &&
-          !mobileMenu.contains(event.target as Node) &&
-          !hamburger.contains(event.target as Node)) {
+      if (
+        mobileMenu &&
+        hamburger &&
+        !mobileMenu.contains(event.target as Node) &&
+        !hamburger.contains(event.target as Node)
+      ) {
         setIsMobileMenuOpen(false);
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
   return (
     <>
       <nav className={style.navbar}>
-        <div className={style.logo}>
-          <Image
-            src="/icons/logo.svg"
-            height={20}
-            width={20}
-            alt="Logo"
-            className={style.logo_icon}
-          />
-          <span className={style.logo_text}>Studio Z</span>
-        </div>
+        {/* <a href="/" className={style.logo_link}> */}
+          <a href="/" className={style.logo}>
+            <Image
+              src="/icons/logo.svg"
+              height={20}
+              width={20}
+              alt="Logo"
+              className={style.logo_icon}
+            />
+            <span className={style.logo_text}>Studio Z</span>
+          </a>
+        {/* </a> */}
         <div className={style["nav-links-toggle"]}>
-        <div className={`${style["nav-links"]} ${isMobileMenuOpen ? style.mobile_menu_open : ''}`}>
+          <div
+            className={`${style["nav-links"]} ${
+              isMobileMenuOpen ? style.mobile_menu_open : ""
+            }`}
+          >
             <a href="/services" className={style["nav-link"]}>
               Services
             </a>
-            <a href="" className={style["nav-link"]}>
+            <a href="/about" className={style["nav-link"]}>
               Work
             </a>
-            <a href="" className={style["nav-link"]}>
+            <a href="/contact" className={style["nav-link"]}>
               Studio
             </a>
             <a href="" className={style["nav-link"]}>
               Blog
             </a>
-            <a 
-              href="#" 
+            <a
+              href="#"
               className={`${style["nav-link"]} ${style.more_button}`}
               onClick={(e) => {
                 e.preventDefault();
@@ -108,18 +119,18 @@ export default function Navbar() {
               }}
             >
               More
-              <Image 
-                src="/icons/arrow-down.svg" 
-                height={20} 
-                width={20} 
-                alt="arrow" 
-                className={`${style.arrow_icon} ${isMoreOpen ? style.arrow_rotate : ''}`}
+              <Image
+                src="/icons/arrow-down.svg"
+                height={20}
+                width={20}
+                alt="arrow"
+                className={`${style.arrow_icon} ${
+                  isMoreOpen ? style.arrow_rotate : ""
+                }`}
               />
             </a>
             <Button label="Let's Talk" href="https://google.com" />
           </div>
-
-          
 
           <span className={style.nav_seperator}></span>
           <button
@@ -152,8 +163,10 @@ export default function Navbar() {
               </div>
             </div>
           </button>
-          <button 
-            className={`${style.hamburger} ${isMobileMenuOpen ? style.hamburger_active : ''}`}
+          <button
+            className={`${style.hamburger} ${
+              isMobileMenuOpen ? style.hamburger_active : ""
+            }`}
             onClick={toggleMobileMenu}
             aria-label="Toggle mobile menu"
           >
@@ -164,21 +177,37 @@ export default function Navbar() {
         </div>
 
         {/* more drop down menu */}
-        <div className={`${style.toggle_div} ${isMoreOpen ? style.toggle_div_open : ''}`}>
-        <div className={style.toggle_div_inner}>
-          <div className={style.toggle_div_left}>Left</div>
-          <div className={style.toggle_div_right}>Rigth</div>
+        <div
+          className={`${style.toggle_div} ${
+            isMoreOpen ? style.toggle_div_open : ""
+          }`}
+        >
+          <div className={style.toggle_div_inner}>
+            <div className={style.toggle_div_left}>Left</div>
+            <div className={style.toggle_div_right}>Rigth</div>
+          </div>
         </div>
-      </div>
 
-      {/* mobile dropdown menu */}
-      {/* Mobile menu */}
-      <div className={`${style.mobile_menu} ${isMobileMenuOpen ? style.mobile_menu_open : ''}`}>
+        {/* mobile dropdown menu */}
+        {/* Mobile menu */}
+        <div
+          className={`${style.mobile_menu} ${
+            isMobileMenuOpen ? style.mobile_menu_open : ""
+          }`}
+        >
           <div className={style.mobile_menu_inner}>
-            <a href="/services" className={style["mobile-link"]}>Services</a>
-            <a href="/work" className={style["mobile-link"]}>Work</a>
-            <a href="/studio" className={style["mobile-link"]}>Studio</a>
-            <a href="/blog" className={style["mobile-link"]}>Blog</a>
+            <a href="/services" className={style["mobile-link"]}>
+              Services
+            </a>
+            <a href="/work" className={style["mobile-link"]}>
+              Work
+            </a>
+            <a href="/studio" className={style["mobile-link"]}>
+              Studio
+            </a>
+            <a href="/blog" className={style["mobile-link"]}>
+              Blog
+            </a>
             <Button label="Let's Talk" href="https://google.com" />
           </div>
         </div>

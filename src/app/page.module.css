@@ -1,6 +1,23 @@
 .container {
   border: 1px solid var(--border);
   margin: 16px;
-  padding: 0 2rem;
+  padding: 0 3rem;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 808px) {
+    .container {
+        padding: 20px 24px 24px;
+        margin: 12px;
+    }
+}
+
+
+@media (max-width: 460px) {
+    .container {
+        margin: 12px;
+        padding: 16px;
+    }
+
 }
 

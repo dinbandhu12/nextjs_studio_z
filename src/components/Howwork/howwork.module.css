@@ -1,0 +1,6 @@
+.howwork_section {
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    background-color: cyan;
+}

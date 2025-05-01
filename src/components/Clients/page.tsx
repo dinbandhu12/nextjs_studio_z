@@ -2,20 +2,24 @@ import styles from "./clients.module.css";
 import Image from "next/image";
 
 const clientLogos = [
-  { id: 1, src: "/client-logos/logo1.svg", alt: "Vision Studio" },
-  { id: 2, src: "/client-logos/logo2.svg", alt: "Abstract" },
-  { id: 3, src: "/client-logos/logo3.svg", alt: "In Motion" },
-  { id: 4, src: "/client-logos/logo4.svg", alt: "Super Food" },
-  { id: 5, src: "/client-logos/logo5.svg", alt: "Creative Studio" },
-  { id: 6, src: "/client-logos/logo6.svg", alt: "Innovation" },
+  { id: 1, src: "/clients/icon-10.svg", alt: "Vision Studio" },
+  { id: 2, src: "/clients/icon-9.svg", alt: "Abstract" },
+  { id: 3, src: "/clients/icon-8.svg", alt: "In Motion" },
+  { id: 4, src: "/clients/icon-7.svg", alt: "Super Food" },
+  { id: 5, src: "/clients/icon-6.svg", alt: "Creative Studio" },
+  { id: 6, src: "/clients/icon-5.svg", alt: "Innovation" },
+  { id: 7, src: "/clients/icon-4.svg", alt: "Innovation" },
+  { id: 8, src: "/clients/icon-3.svg", alt: "Innovation" },
+  { id: 9, src: "/clients/icon-2.svg", alt: "Innovation" },
+  { id: 10, src: "/clients/icon-1.svg", alt: "Innovation" },
 ];
 
 export default function Clients() {
   return (
     <div className={styles.clients_container}>
       <div className={styles.client_title}>
-      <h2 className={styles.title}>OUR CLIENTS</h2>
-      <span className={styles.client_title_seperator}></span>
+        <h2 className={styles.title}>OUR CLIENTS</h2>
+        <span className={styles.client_title_seperator}></span>
       </div>
       
       <div className={styles.slider}>
@@ -26,9 +30,9 @@ export default function Clients() {
               <Image
                 src={logo.src}
                 alt={logo.alt}
-                width={150}
+                width={60}
                 height={60}
-                className={styles.logo}
+                className={styles.client_logo}
               />
             </div>
           ))}
@@ -38,9 +42,9 @@ export default function Clients() {
               <Image
                 src={logo.src}
                 alt={logo.alt}
-                width={150}
+                width={60}
                 height={60}
-                className={styles.logo}
+                className={styles.client_logo}
               />
             </div>
           ))}

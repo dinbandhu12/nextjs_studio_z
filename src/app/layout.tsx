@@ -5,6 +5,7 @@ import "./globals.css";
 import styles from "./page.module.css";
 import { ThemeScript } from "@/utils/Theme";
 import Hero from "@/components/Hero/page";
+import SmoothScroll from "@/components/SmoothScroll/page";
 
 const robotoMono = Roboto_Mono({
   subsets: ["latin"],
@@ -29,12 +30,14 @@ export default function RootLayout({
         <ThemeScript />
       </head>
       <body>
+        <SmoothScroll>
         <div className={styles.container}>
           <Navbar />
-          <Hero />
+          {/* <Hero /> */}
           <main>{children}</main>
           {/* <Footer /> */}
         </div>
+        </SmoothScroll>
       </body>
     </html>
   );

@@ -33,6 +33,7 @@
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
+  z-index: 99;
 }
 
 :global(.dark-mode) .toggle_div {
@@ -68,6 +69,8 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  text-decoration: none;
+  color: var(--text-color);
 }
 
 .logo_icon {
@@ -294,6 +297,7 @@
   /* border-radius: 8px; */
   margin-top: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 99;
 }
 
 .mobile_menu_open {

@@ -1,10 +1,12 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import Hero from "@/components/Hero/page";
 
 export default function Home() {
   return (
-    <div>
+    <main data-scroll-container>
+      <Hero />
       
-    </div>
+    </main>
   );
 }
