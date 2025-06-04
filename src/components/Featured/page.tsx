@@ -17,7 +17,7 @@ export default function Featured() {
 
     const mm = gsap.matchMedia();
 
-    mm.add("(min-width: 768px)", () => {
+    mm.add("(min-width: 1198px)", () => {
       gsap.to(titleRef.current, {
         scrollTrigger: {
           trigger: sectionRef.current,
