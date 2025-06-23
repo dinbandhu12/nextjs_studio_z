@@ -1,6 +1,118 @@
 .howwork_section {
-    height: 100vh;
+    height: min-content;
     width: 100%;
     display: grid;
-    background-color: cyan;
+    grid-template-columns: 65% 35%;
+    justify-content: space-between;
+    padding: 4rem 0;
+    border-top: 1px solid var(--border-light);
+}
+
+.howwork_section .howwork_title {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 509px;
+    border-right: 2px solid var(--border-light);
+}
+
+.howwork_section .howwork_title .howwork_top {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.howwork_section .howwork_small_text {
+    font-size: 1rem;
+    font-family: var(--font-subheading);
+    color: var(--subheading-light);
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.howwork_section .howwork_para_text {
+    font-size: 64px;
+    font-family: var(--font-heading);
+    color: var(--heading-light);
+    font-weight: 500;
+    padding-right: 48px;
+}
+
+.howwork_section .howwork_icon_sec {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.howwork_section .howwork_icon_sec .howwork_icon {
+    width: 80px;
+    height: 80px;
+    filter: invert(1);
+}
+
+:global(.dark-mode) .howwork_section .howwork_icon_sec .howwork_icon {
+    filter: invert(0);
+}
+
+.howwork_section .howwork_right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 509px;
+    padding-left: 42px;
+}
+
+.howwork_section .howwork_right .howwork_right_para_text {
+    font-size: 22px;
+    font-family: var(--font-paragraph);
+    color: var(--paragraph-light);
+    font-weight: 400;
+}
+
+
+/* Responsiveness */
+
+@media (max-width: 1198px) {
+    .howwork_section {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 40px 0;
+        border: none;
+    }
+
+    .howwork_section .howwork_title {
+        border-right: none;
+        gap: 40px;
+    }
+
+    .howwork_section .howwork_para_text {
+        font-size: 56px;
+        padding-right: 0;
+    }
+
+    .howwork_section .howwork_title, .howwork_section .howwork_right {
+        height: auto;
+    }
+
+    .howwork_section .howwork_right {
+        padding-left: 0;
+        padding-top: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+        border-top: 1px solid var(--border-light);
+    }
+}
+
+
+
+
+@media (max-width: 808px) {
+
+}
+
+
+@media (max-width: 480px) {
+
 }

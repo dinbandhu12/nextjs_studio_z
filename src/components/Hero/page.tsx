@@ -4,6 +4,7 @@ import Clients from '../Clients/page';
 import Services from '../Services/page';
 import Featured from '../Featured/page';
 import HowWork from '../Howwork/page';
+import Values from '../Values/page';
 
 export default function Hero() {
   return (
@@ -35,6 +36,9 @@ export default function Hero() {
     </section>
     <section data-scroll-section>
         <HowWork />
+    </section>
+    <section data-scroll-section>
+        <Values />
     </section>
     </>
   );
