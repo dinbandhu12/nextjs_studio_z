@@ -21,7 +21,7 @@ export default function HowWork() {
             className={styles.howwork_icon}
           />
         </div>
-      </div>
+      </div> 
       <div className={styles.howwork_right}>
         <div className={styles.howwork_right_para_text}>
           <p>
